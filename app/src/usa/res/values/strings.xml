@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Product Viewer</string>
+    <string name="product_details_label">Product Details</string>
+    <string name="action_settings">Settings</string>
+    <string name="no_locale_handler">"No app found to change default language on the device"</string>
+    <string name="err_product_details_incorrect">Product details must be filled out</string>
+    <string name="err_product_name_empty">Product name must not be empty</string>
+    <string name="err_product_desc_empty">Product description must not be empty</string>
+    <string name="err_product_reg_price_empty">Product regular price must not be empty</string>
+    <string name="err_product_sale_price_empty">Product sale price must not be empty</string>
+    <string name="err_product_reg_price_negative">Product regular price must be a non negative number</string>
+    <string name="err_product_sale_price_nan">Product regular price must be a valid number</string>
+    <string name="err_product_reg_price_nan">Product sale price must be a valid number</string>
+    <string name="err_product_sale_price_negative">Product sale price must be a non negative number</string>
+    <string name="success_product_updated">Product updated</string>
+    <string name="success_product_created">Product created</string>
+    <string name="err_mgg_code_unresolved">Error in resolving message code</string>
+    <string name="sale_price">Sale price</string>
+    <string name="regular_price">Regular price</string>
+    <string name="product_id">Product id</string>
+    <string name="product_description">Product description</string>
+    <string name="product_name">Product name</string>
+</resources>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".productdetail.ProductDetailActivity"
+    tools:showIn="@layout/activity_product_detail">
+
+    <LinearLayout
+        android:id="@+id/ll_product_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/standard_margin_four_times"
+        android:orientation="vertical">
+
+        <ViewSwitcher
+            android:id="@+id/vs_details_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/ll_details_no_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:text="@string/product_name"
+                    android:textSize="@dimen/title_text_size" />
+
+                <TextView
+                    android:id="@+id/tv_product_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/standard_margin"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:text="@string/product_description"
+                    android:textSize="@dimen/title_text_size" />
+
+                <TextView
+                    android:id="@+id/tv_product_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/standard_margin"
+                    android:textColor="@color/colorText"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:text="@string/product_id"
+                    android:textSize="@dimen/title_text_size" />
+
+                <TextView
+                    android:id="@+id/tv_product_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/standard_margin"
+                    android:textColor="@color/colorText"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:text="@string/regular_price"
+                    android:textSize="@dimen/title_text_size" />
+
+                <TextView
+                    android:id="@+id/tv_product_regular_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/standard_margin"
+                    android:textColor="@color/colorText"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:text="@string/sale_price"
+                    android:textSize="@dimen/title_text_size" />
+
+                <TextView
+                    android:id="@+id/tv_product_sale_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/standard_margin"
+                    android:textColor="@color/colorText"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_details_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:text="@string/product_name"
+                    android:textSize="@dimen/title_text_size" />
+
+                <EditText
+                    android:id="@+id/et_product_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/standard_margin"
+                    android:textColor="@color/colorText"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:text="@string/product_description"
+                    android:textSize="@dimen/title_text_size" />
+
+                <EditText
+                    android:id="@+id/et_product_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/standard_margin"
+                    android:textColor="@color/colorText"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:text="@string/regular_price"
+                    android:textSize="@dimen/title_text_size" />
+
+                <EditText
+                    android:id="@+id/et_product_regular_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/standard_margin"
+                    android:hint="USD"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/colorText"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:text="@string/sale_price"
+                    android:textSize="@dimen/title_text_size" />
+
+                <EditText
+                    android:id="@+id/et_product_sale_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/standard_margin"
+                    android:hint="USD"
+                    android:inputType="numberDecimal"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </ViewSwitcher>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,41 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+
+    repositories {
+        maven { url 'https://maven.google.com' }
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.0-alpha3'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url 'https://maven.google.com' }
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+gradle.taskGraph.whenReady {
+    taskGraph ->
+    if (taskGraph.hasTask(':assembleRelease')) {
+        def console = System.console()
+        if (console) {
+            print "console is not null"
+            def storepw = new String(console.readPassword("\nKeystore password: "))
+            def keypw = new String(console.readPassword("\nKey password: "))
+            android.signingConfigs.release.storePassword = storepw
+            android.signingConfigs.release.keyPassword = keypw
+        } else {
+            print "console is null"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">प्रोडक्ट दर्शक</string>
+    <string name="product_details_label">प्रोडक्ट विवरण</string>
+    <string name="action_settings">सेटिंग्स</string>
+    <string name="no_locale_handler">उपकरण पर डिफ़ॉल्ट भाषा बदलने के लिए कोई ऐप नहीं मिला</string>
+    <string name="err_product_details_incorrect">उत्पाद विवरण भरने चाहिए</string>
+    <string name="err_product_name_empty">उत्पाद का नाम रिक्त नहीं होना चाहिए</string>
+    <string name="err_product_desc_empty">उत्पाद का विवरण रिक्त नहीं होना चाहिए</string>
+    <string name="err_product_reg_price_empty">उत्पाद की नियमित कीमत रिक्त नहीं होनी चाहिए</string>
+    <string name="err_product_sale_price_empty">उत्पाद की बिक्री मूल्य रिक्त नहीं होनी चाहिए</string>
+    <string name="err_product_reg_price_negative">उत्पाद की नियमित कीमत एक गैर नकारात्मक संख्या होना चाहिए</string>
+    <string name="err_product_sale_price_nan">उत्पाद की नियमित कीमत एक वैध संख्या होना चाहिए</string>
+    <string name="err_product_reg_price_nan">उत्पाद बिक्री मूल्य एक मान्य संख्या होना चाहिए</string>
+    <string name="err_product_sale_price_negative">उत्पाद बिक्री मूल्य एक गैर नकारात्मक संख्या होना चाहिए</string>
+    <string name="success_product_updated">उत्पाद अपडेट किया गया</string>
+    <string name="success_product_created">उत्पाद बनाया</string>
+    <string name="err_mgg_code_unresolved">संदेश कोड को हल करने में त्रुटि</string>
+    <string name="sale_price">विक्रय कीमत</string>
+    <string name="regular_price">नियमित रूप से मूल्य</string>
+    <string name="product_id">उत्पाद आइ डि</string>
+    <string name="product_description">उत्पाद वर्णन</string>
+    <string name="product_name">उत्पाद का नाम</string>
+</resources>

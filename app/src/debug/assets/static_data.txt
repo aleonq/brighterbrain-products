@@ -1,0 +1,23 @@
+[
+    {
+		"name": "guitar",
+		"description": "music instrument",
+		"regularPrice": "12.00",
+		"salePrice": "14.21",
+		"productPhotoUri": ""
+	},
+	{
+		"name": "pen",
+		"description": "stationery",
+		"regularPrice": "1.21",
+		"salePrice": "2.01",
+		"productPhotoUri": ""
+	},
+	{
+		"name": "Table Lamp",
+		"description": "Office Supplies",
+		"regularPrice": "4.02",
+		"salePrice": "5.11",
+		"productPhotoUri": ""
+	}
+]

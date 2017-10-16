@@ -1,0 +1,106 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "com.mindworks.shoppingraga"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        release {
+            storeFile file('../signing/signing.keystore')
+            storePassword '111111'
+            keyAlias "signing"
+            keyPassword '111111'
+        }
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+        }
+        release {
+            minifyEnabled false
+            applicationIdSuffix ".release"
+            versionNameSuffix "-release"
+            signingConfig signingConfigs.release
+        }
+        beta {
+            minifyEnabled false
+            applicationIdSuffix ".beta"
+            versionNameSuffix "-beta"
+            signingConfig signingConfigs.release
+        }
+    }
+    flavorDimensions "color", "country"
+    productFlavors {
+        pale {
+            applicationIdSuffix ".pale"
+            versionNameSuffix "-pale"
+            dimension "color"
+            buildConfigField("String", "featureList", "\"restricted\"")
+            resValue("string", "ads", "\"true\"")
+        }
+        grey {
+            applicationIdSuffix ".grey"
+            versionNameSuffix "-grey"
+            dimension "color"
+            buildConfigField("String", "featureList", "\"all\"")
+            resValue("string", "ads", "\"false\"")
+        }
+        india {
+            applicationIdSuffix ".india"
+            versionNameSuffix "-india"
+            dimension "version"
+            dimension "country"
+            buildConfigField("String", "shortcode", "\"IN\"")
+        }
+        usa {
+            applicationIdSuffix ".usa"
+            versionNameSuffix "-usa"
+            dimension "version"
+            dimension "country"
+            buildConfigField("String", "shortcode", "\"US\"")
+        }
+    }
+    variantFilter {
+        variant ->
+            def names = variant.flavors*.name
+            def buildTypeName = variant.buildType.name
+            // if buildtype is required for filtering use
+            // the above field
+            if (names.contains("india") && buildTypeName.contains("beta")) {
+                variant.ignore = true
+                // or variant.setIgnore(true)
+            }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:design:26.1.0'
+
+    // INJECTION
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.jakewharton:butterknife:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+    compile 'com.google.dagger:dagger:2.9'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.9'
+    provided 'javax.annotation:jsr250-api:1.0'
+
+    //CARD VIEW
+    compile 'com.android.support:cardview-v7:26.1.0';
+
+    //Database
+    // ROOM
+    compile "android.arch.persistence.room:runtime:1.0.0-alpha9-1"
+    annotationProcessor "android.arch.persistence.room:compiler:1.0.0-alpha9-1"
+}
