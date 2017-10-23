@@ -11,11 +11,11 @@ import java.util.HashMap;
 public enum ObjectPool {
     INSTANCE;
 
+    private HashMap<String, Object> cachedPool;
+
     ObjectPool() {
         cachedPool = new HashMap<>();
     }
-
-    private HashMap<String, Object> cachedPool;
 
     public Object getValue(String key) {
         return cachedPool.get(key);

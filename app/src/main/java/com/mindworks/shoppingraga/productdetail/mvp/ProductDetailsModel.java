@@ -1,5 +1,7 @@
 package com.mindworks.shoppingraga.productdetail.mvp;
 
+import android.util.Log;
+
 import com.mindworks.shoppingraga.datastore.beans.Product;
 import com.mindworks.shoppingraga.datastore.sqliteroom.AppDatabase;
 import com.mindworks.shoppingraga.utils.Constants;
@@ -11,6 +13,7 @@ import com.mindworks.shoppingraga.utils.ObjectPool;
 
 public class ProductDetailsModel implements ProductDetailsMvp.Model {
 
+    private static final String TAG = ProductDetailsModel.class.getSimpleName();
     private final AppDatabase database;
     ProductDetailsMvp.Presenter presenter;
     ObjectPool objectPool;
@@ -32,7 +35,7 @@ public class ProductDetailsModel implements ProductDetailsMvp.Model {
 
     @Override
     public boolean isProductDetailsEditable() {
-        return (Boolean) objectPool.getValue(Constants.KEY_PRODUCT_DETAILS_EDITABLE);
+        return (Boolean)objectPool.getValue(Constants.KEY_PRODUCT_DETAILS_EDITABLE);
     }
 
     @Override
