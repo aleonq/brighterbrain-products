@@ -14,6 +14,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import net.hockeyapp.android.CrashManager;
+import net.hockeyapp.android.UpdateManager;
+
 import com.mindworks.shoppingraga.App;
 import com.mindworks.shoppingraga.R;
 import com.mindworks.shoppingraga.datastore.beans.Product;
@@ -58,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements ProductListMvp.Vi
         ((App)getApplication()).getAppComponent().inject(this);
         presenter.setView(this);
         initUI();
+        checkForUpdates();
     }
 
     private void initUI() {
@@ -86,6 +90,19 @@ public class MainActivity extends AppCompatActivity implements ProductListMvp.Vi
     protected void onResume() {
         super.onResume();
         presenter.loadData();
+        checkForCrashes();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterManagers();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterManagers();
     }
 
     @Override
@@ -135,5 +152,18 @@ public class MainActivity extends AppCompatActivity implements ProductListMvp.Vi
     @Override
     public void onProductClicked(Product product) {
         presenter.onProductClicked(product);
+    }
+
+    private void checkForCrashes() {
+        CrashManager.register(this);
+    }
+
+    private void checkForUpdates() {
+        // Remove this for store builds!
+        UpdateManager.register(this);
+    }
+
+    private void unregisterManagers() {
+        UpdateManager.unregister();
     }
 }

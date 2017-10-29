@@ -11,6 +11,7 @@ android {
         versionName "1.0"
         testApplicationId "com.mindworks.shoppingraga.test"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [HOCKEYAPP_APP_ID: "2c2eaae91c9047439855ec4b0b2795f5"]
     }
     signingConfigs {
         release {
@@ -131,4 +132,7 @@ dependencies {
     // ROOM
     implementation "android.arch.persistence.room:runtime:1.0.0-alpha9-1"
     annotationProcessor "android.arch.persistence.room:compiler:1.0.0-alpha9-1"
+
+    //Distribution
+    compile 'net.hockeyapp.android:HockeySDK:5.0.2'
 }
